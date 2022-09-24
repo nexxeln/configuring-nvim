@@ -15,7 +15,7 @@ return require("packer").startup(function(use)
   use "wbthomason/packer.nvim"
 
   -- color scheme
-  use "tiagovla/tokyodark.nvim" 
+  use "rebelot/kanagawa.nvim"
 
   use {
     "nvim-treesitter/nvim-treesitter",

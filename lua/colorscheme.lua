@@ -1,5 +1,15 @@
-vim.g.tokyodark_transparent_background = true
-vim.g.tokyodark_enable_italic = false
+local present, kanagawa = pcall(require, "kanagawa")
 
-vim.cmd("colorscheme tokyodark")
+if (not present) then
+  return
+end
+
+kanagawa.setup({
+  commentStyle = { italic = false },
+  keywordStyle = { italic = false },
+  variablebuiltinStyle = { italic = false },
+  transparent = true,
+})
+
+vim.cmd("colorscheme kanagawa")
 
