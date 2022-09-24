@@ -27,6 +27,7 @@ ts.setup({
     "json",
     "lua",
     "markdown",
+		"markdown_inline",
     "prisma",
     "python",
     "rust",
