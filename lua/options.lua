@@ -35,3 +35,13 @@ opt.signcolumn = "yes" -- always show the sign column
 opt.undofile = true -- persistent undo
 opt.expandtab = true -- convert tabs to spaces (very controversial)
 opt.guicursor = "n-v-c-i:block" -- cursor style in different modes, see :help 'guicursor'
+
+-- sync wsl2 vim clipboard with windows
+vim.cmd[[
+  if system('uname -r') =~ "microsoft"
+    augroup Yank
+    autocmd!
+    autocmd TextYankPost * :call system('/mnt/c/windows/system32/clip.exe ',@")
+    augroup END
+  endif
+]]
