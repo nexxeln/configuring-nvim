@@ -36,10 +36,14 @@ return require("packer").startup({ function(use)
     run = ":TSUpdate"
   }
 
+  -- telescope
   use {
     "nvim-telescope/telescope.nvim", tag = "0.1.0",
     requires = { {"nvim-lua/plenary.nvim"} }
   }
+
+  -- telescope code actions
+  use "nvim-telescope/telescope-ui-select.nvim"
 
   -- status line
   use {
