@@ -1,11 +1,11 @@
 local present, ts = pcall(require, "nvim-treesitter.configs")
 
-if (not present) then 
+if (not present) then
   return
 end
 
 ts.setup({
-  auto_install = true,	
+  auto_install = true,
   highlight = {
     enable = true,
     use_languagetree = true,
@@ -18,6 +18,9 @@ ts.setup({
   },
   autotag = {
     enable = true,
+  },
+  context_commentstring = {
+    enable = true
   },
   ensure_installed = {
     "bash",
