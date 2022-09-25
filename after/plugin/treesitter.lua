@@ -16,6 +16,9 @@ ts.setup({
   indent = {
     enable = true,
   },
+  autotag = {
+    enable = true,
+  },
   ensure_installed = {
     "bash",
     "css",
