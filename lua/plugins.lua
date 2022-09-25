@@ -36,6 +36,13 @@ return require("packer").startup({ function(use)
     requires = { "kyazdani42/nvim-web-devicons", opt = true }
   }
 
+  -- lsp
+  use "neovim/nvim-lspconfig" 
+
+  -- lsp installer
+  use "williamboman/mason.nvim"
+  use "williamboman/mason-lspconfig.nvim"
+
   if packer_bootstrap then
     require("packer").sync()
   end
