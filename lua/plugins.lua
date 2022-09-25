@@ -45,6 +45,9 @@ return require("packer").startup({ function(use)
   -- telescope code actions
   use "nvim-telescope/telescope-ui-select.nvim"
 
+  -- telescope file browser
+  use "nvim-telescope/telescope-file-browser.nvim"
+
   -- status line
   use {
     "nvim-lualine/lualine.nvim",

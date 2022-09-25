@@ -14,9 +14,3 @@ vim.g.mapleader = " "
 -- move line up/down
 map("n", ";j", "ddp", { silent = true })
 map("n", ";k", "ddkP", { silent = true })
-
--- telescope
-map("n", "<leader>f", ":Telescope find_files<CR>", { silent = true })
-map("n", "<leader>g", ":Telescope live_grep<CR>", { silent = true })
-map("n", "<leader>b", ":Telescope buffers<CR>", { silent = true })
-map("n", "<leader><leader>", ":Telescope builtin<CR>", { silent = true })
