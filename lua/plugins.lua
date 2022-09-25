@@ -52,12 +52,22 @@ return require("packer").startup({ function(use)
      end
   }
 
+  -- git decorations in files
   use {
     "lewis6991/gitsigns.nvim",
     config = function()
       require("gitsigns").setup()
     end
   }
+
+  -- commenting
+   use {
+    "numToStr/Comment.nvim",
+    config = function()
+        require("Comment").setup()
+      end
+  }
+
   -- telescope
   use {
     "nvim-telescope/telescope.nvim", tag = "0.1.0",
