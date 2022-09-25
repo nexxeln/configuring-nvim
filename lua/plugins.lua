@@ -36,6 +36,11 @@ return require("packer").startup({ function(use)
     run = ":TSUpdate"
   }
 
+  use {
+    "windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+  }
+
   -- telescope
   use {
     "nvim-telescope/telescope.nvim", tag = "0.1.0",
