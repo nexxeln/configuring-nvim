@@ -37,6 +37,7 @@ return require("packer").startup({
 			"nvim-treesitter/nvim-treesitter",
 			run = ":TSUpdate",
 		})
+		use("nvim-treesitter/nvim-treesitter-textobjects")
 
 		-- automatic bracket pairs
 		use({
@@ -67,6 +68,9 @@ return require("packer").startup({
 				require("gitsigns").setup()
 			end,
 		})
+
+		-- surround selections
+		use("kylechui/nvim-surround")
 
 		-- commenting
 		use({
