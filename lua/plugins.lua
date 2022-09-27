@@ -98,6 +98,9 @@ return require("packer").startup({
 		use("williamboman/mason.nvim")
 		use("williamboman/mason-lspconfig.nvim")
 
+		-- lsp ui
+		use("glepnir/lspsaga.nvim")
+
 		-- formatting, code actions and diagnostics
 		use({
 			"jose-elias-alvarez/null-ls.nvim",
