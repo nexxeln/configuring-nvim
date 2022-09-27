@@ -1,9 +1,9 @@
 local ensure_packer = function()
   local fn = vim.fn
-  local install_path = fn.stdpath("data").."/site/pack/packer/start/packer.nvim"
+  local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 
   if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({"git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path})
+    fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
 
     print("Installing packer...")
 
@@ -38,18 +38,18 @@ return require("packer").startup({ function(use)
 
   -- automatic bracket pairs
   use {
-     "windwp/nvim-autopairs",
-     config = function()
-       require("nvim-autopairs").setup {}
-     end
+    "windwp/nvim-autopairs",
+    config = function()
+      require("nvim-autopairs").setup {}
+    end
   }
 
   -- autoclose and rename html tags
   use {
-     "windwp/nvim-ts-autotag",
-     config = function()
-       require("nvim-ts-autotag").setup {}
-     end
+    "windwp/nvim-ts-autotag",
+    config = function()
+      require("nvim-ts-autotag").setup {}
+    end
   }
 
   -- git decorations in files
@@ -61,7 +61,7 @@ return require("packer").startup({ function(use)
   }
 
   -- commenting
-   use {
+  use {
     "numToStr/Comment.nvim",
     config = function()
       require("Comment").setup {
@@ -74,7 +74,7 @@ return require("packer").startup({ function(use)
   -- telescope
   use {
     "nvim-telescope/telescope.nvim", tag = "0.1.0",
-    requires = { {"nvim-lua/plenary.nvim"} }
+    requires = { { "nvim-lua/plenary.nvim" } }
   }
 
   -- telescope code actions
@@ -95,6 +95,12 @@ return require("packer").startup({ function(use)
   -- lsp installer
   use "williamboman/mason.nvim"
   use "williamboman/mason-lspconfig.nvim"
+  
+  -- formatting, code actions and diagnostics
+  use {
+    "jose-elias-alvarez/null-ls.nvim",
+    commit = "76d0573fc159839a9c4e62a0ac4f1046845cdd50",
+  }
 
   -- autocompletion
   use "hrsh7th/nvim-cmp"
