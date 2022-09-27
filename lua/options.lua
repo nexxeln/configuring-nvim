@@ -1,7 +1,7 @@
 local opt = vim.opt
 
--- 2 spaces for each indentation 
-opt.shiftwidth = 2 
+-- 2 spaces for each indentation
+opt.shiftwidth = 2
 -- insert 2 spaces for tab while editing
 opt.tabstop = 2
 opt.softtabstop = 2
@@ -11,13 +11,13 @@ opt.splitbelow = true -- force all horizontal splits to go below current window
 opt.splitright = true -- force all vertical splits to go to the right of current window
 opt.termguicolors = true -- enable 2 bit RGB colors, most modern terminal emulators support this
 opt.autoindent = true -- auto indent when using `o` or `O`
-opt.smartindent = true -- smart indenting 
+opt.smartindent = true -- smart indenting
 opt.wrap = false -- wrap lines
 opt.cmdheight = 2 -- height of command bar
 opt.fileencoding = "utf-8" -- encoding of files
 opt.mouse = "a" -- enable mouse in all modes, for more options see :help 'mouse'
 opt.ignorecase = true -- ignore case while searching
-opt.smartcase = true -- ovveride ignore case if search pattern contains upper case characters 
+opt.smartcase = true -- ovveride ignore case if search pattern contains upper case characters
 opt.number = true -- numbered lines
 opt.relativenumber = true -- relative line numbers
 opt.numberwidth = 4 -- number column width
@@ -37,11 +37,11 @@ opt.expandtab = true -- convert tabs to spaces (very controversial)
 opt.guicursor = "n-v-c-i:block" -- cursor style in different modes, see :help 'guicursor'
 
 -- sync wsl2 vim clipboard with windows
-vim.cmd[[
+vim.cmd([[
   if system('uname -r') =~ "microsoft"
     augroup Yank
     autocmd!
     autocmd TextYankPost * :call system('/mnt/c/windows/system32/clip.exe ',@")
     augroup END
   endif
-]]
+]])

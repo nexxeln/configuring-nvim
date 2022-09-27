@@ -1,13 +1,13 @@
 local cmp_present, cmp = pcall(require, "cmp")
 
-if (not cmp_present) then
-  return
+if not cmp_present then
+	return
 end
 
 local luasnip_present, luasnip = pcall(require, "luasnip")
 
-if (not luasnip_present) then
-  return
+if not luasnip_present then
+	return
 end
 
 require("luasnip/loaders/from_vscode").lazy_load()
@@ -46,12 +46,12 @@ local kind_icons = {
 }
 
 cmp.setup({
-  snippet = {
-    expand = function(args)
-      luasnip.lsp_expand(args.body)
-    end
-  },
-  mapping = cmp.mapping.preset.insert({
+	snippet = {
+		expand = function(args)
+			luasnip.lsp_expand(args.body)
+		end,
+	},
+	mapping = cmp.mapping.preset.insert({
 		["<C-k>"] = cmp.mapping.select_prev_item(),
 		["<C-j>"] = cmp.mapping.select_next_item(),
 		["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
@@ -93,7 +93,7 @@ cmp.setup({
 			"s",
 		}),
 	}),
-  formatting = {
+	formatting = {
 		fields = { "kind", "abbr", "menu" },
 		format = function(entry, vim_item)
 			vim_item.kind = kind_icons[vim_item.kind]
@@ -109,7 +109,7 @@ cmp.setup({
 			return vim_item
 		end,
 	},
-  sources = {
+	sources = {
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
 		{ name = "nvim_lua" },
@@ -117,11 +117,11 @@ cmp.setup({
 		{ name = "buffer" },
 		{ name = "treesitter" },
 	},
-  confirm_opts = {
+	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
 		select = false,
 	},
-  window = {
+	window = {
 		completion = cmp.config.window.bordered(),
 		documentation = cmp.config.window.bordered(),
 	},

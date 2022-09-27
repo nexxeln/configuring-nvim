@@ -9,8 +9,8 @@ null_ls.setup({
 	sources = {
 		formatting.stylua,
 		formatting.prettierd,
-    formatting.rustfmt,
-    formatting.gofmt,
+		formatting.rustfmt,
+		formatting.gofmt,
 		diagnostics.eslint_d,
 		code_actions.eslint_d,
 	},
@@ -20,11 +20,11 @@ null_ls.setup({
 			vim.api.nvim_create_autocmd("BufWritePre", {
 				group = augroup,
 				buffer = bufnr,
-        callback = function()
-          vim.lsp.buf.format({
-            bufnr = bufnr,
-          })
-        end,
+				callback = function()
+					vim.lsp.buf.format({
+						bufnr = bufnr,
+					})
+				end,
 			})
 		end
 	end,
