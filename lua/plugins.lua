@@ -32,6 +32,7 @@ return require("packer").startup({
 		-- color scheme
 		use("rebelot/kanagawa.nvim")
 
+		-- treesitter
 		use({
 			"nvim-treesitter/nvim-treesitter",
 			run = ":TSUpdate",
@@ -52,6 +53,9 @@ return require("packer").startup({
 				require("nvim-ts-autotag").setup({})
 			end,
 		})
+
+		-- indent guides
+		use("lukas-reineke/indent-blankline.nvim")
 
 		-- git decorations in files
 		use({
